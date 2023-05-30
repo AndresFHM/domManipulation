@@ -76,6 +76,9 @@ function removeFromFavorites(itemId) {
 
 function toggleBackground(event) {
     const card = event.target;
+    if (!card.classList.contains("card")) {
+        return;
+    }
     const itemId = card.id;
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
